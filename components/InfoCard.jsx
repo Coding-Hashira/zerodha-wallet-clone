@@ -14,14 +14,16 @@ import { AiOutlineDown } from "react-icons/ai";
 
 const CardStat = ({ label, amount, color = "black" }) => {
   return (
-    <Flex flexDir="column" gap="1">
-      <Text fontSize="sm" color="gray.500">
-        {label}
-      </Text>
-      <Text fontSize="2xl" color={color}>
+    <div className="flex flex-col gap-1">
+      <span className="text-sm text-gray-500">{label}</span>
+      <span
+        className={`text-2xl ${
+          color === "black" ? "text-black" : "text-red-600"
+        }`}
+      >
         {amount}
-      </Text>
-    </Flex>
+      </span>
+    </div>
   );
 };
 
@@ -29,35 +31,33 @@ const InfoCard = () => {
   return (
     <Card display="flex" flexDirection="column">
       <CardHeader paddingX="10">
-        <Flex alignItems="center" gap="8">
-          <Heading size="lg" fontWeight="medium">
+        <div className="flex items-center gap-8">
+          <span className="text-xl font-medium" size="lg" fontWeight="medium">
             Sub-accounts
-          </Heading>
-          <Flex alignSelf="end" color="gray.500" alignItems="center" gap="3">
-            <Text fontSize="sm" fontWeight="medium">
-              2/2 Selected
-            </Text>
+          </span>
+          <div className="flex self-end text-gray-500 gap-3 items-center">
+            <span className="text-sm font-medium">2/2 Selected</span>
             <AiOutlineDown />
-          </Flex>
-        </Flex>
+          </div>
+        </div>
       </CardHeader>
       <Divider color="#dfdfdf" w="95%" alignSelf="center" />
       <CardBody px="10">
-        <Flex pb="4" justifyContent="space-between" pr="40">
+        <div className="flex pb-4 justify-between pr-40">
           <CardStat label="Invested" amount="8,38,669.75" />
           <CardStat label="Present Value" amount="8,10,669.75" />
-          <CardStat label="Unrealized P&L" amount="-28,300.92" color="red" />
-        </Flex>
-        <Flex alignSelf="end" color="blue.500" alignItems="center" gap="3">
-          <Text
-            fontSize="sm"
-            _hover={{ textDecoration: "underline", cursor: "pointer" }}
-            fontWeight="medium"
-          >
+          <CardStat
+            label="Unrealized P&L"
+            amount="-28,300.92"
+            color="red-600"
+          />
+        </div>
+        <div className="flex self-end text-blue-500 gap-3 items-center">
+          <span className="text-sm hover:underline cursor-pointer font-medium">
             View sub-accounts
-          </Text>
+          </span>
           <AiOutlineDown />
-        </Flex>
+        </div>
       </CardBody>
     </Card>
   );
