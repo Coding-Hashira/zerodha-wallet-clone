@@ -6,11 +6,11 @@ const DetailsTab = ({ tabIndex, handleCardTabsChange }) => {
   return (
     <Tabs index={tabIndex} onChange={handleCardTabsChange}>
       <TabList>
-        <Tab paddingX="14">Personal</Tab>
-        <Tab paddingX="14">Family</Tab>
+        <Tab className="md:px-14">Personal</Tab>
+        <Tab className="md:px-14">Family</Tab>
       </TabList>
 
-      <TabPanels className="pt-8 ">
+      <TabPanels className="md:pt-8 pt-4">
         <TabPanel className="px-0">
           <InfoCard />
         </TabPanel>

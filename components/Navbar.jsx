@@ -5,11 +5,11 @@ import Profile from "./Profile";
 
 const Navbar = () => {
   return (
-    <nav className="px-20 flex justify-between items-center border shadow">
+    <nav className="lg:px-20 flex justify-center lg:justify-between py-5 lg:py-0 items-center border shadow">
       <Logo />
 
       {/* Right side */}
-      <div className="flex items-center space-x-7">
+      <div className="lg:flex hidden items-center space-x-7">
         <div className="flex  items-center justify-center  space-x-9">
           <NavItem text="Dashboard" />
           <NavItem text="Portfolio" active />
